@@ -26,3 +26,12 @@
 *.exe
 *.out
 *.app
+
+# Python things
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+
+
