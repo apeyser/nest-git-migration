@@ -1,20 +1,20 @@
 #!/bin/bash
-script:
-  set -e
-  set -x
 
-  mkdir -p $HOME/.matplotlib
- cat > $HOME/.matplotlib/matplotlibrc <<EOF
-     # ZYV
-     backend : svg
- EOF
+set -e
+set -x
 
- if [ "$xMPI" = "MPI+" ] ; then
+mkdir -p $HOME/.matplotlib
+cat > $HOME/.matplotlib/matplotlibrc <<EOF
+    # ZYV
+    backend : svg
+EOF
+
+if [ "$xMPI" = "MPI+" ] ; then
 
     # Fedora
     module load mpi/openmpi-i386
 
- cat > $HOME/.nestrc <<EOF
+cat > $HOME/.nestrc <<EOF
     % ZYV: NEST MPI configuration
 
     /mpirun
@@ -25,42 +25,42 @@ script:
       (mpirun -np ) numproc cvs ( ) statusdict/prefix :: (/bin/nest )  slifile
      ] {join} Fold
     } Function def
- EOF
+EOF
 
     CONFIGURE_MPI="--with-mpi"
 
- else
+else
     CONFIGURE_MPI="--without-mpi"
- fi
+fi
 
- if [ "$xPYTHON" = "Python+" ] ; then
+if [ "$xPYTHON" = "Python+" ] ; then
     CONFIGURE_PYTHON="--with-python"
- else
+else
     CONFIGURE_PYTHON="--without-python"
- fi
+fi
 
- if [ "$xGSL" = "GSL+" ] ; then
+if [ "$xGSL" = "GSL+" ] ; then
     CONFIGURE_GSL="--with-gsl"
- else
+else
     CONFIGURE_GSL="--without-gsl"
- fi
+fi
 
- ./bootstrap.sh
+./bootstrap.sh
 
- NEST_VPATH=$WORKSPACE/build
- NEST_RESULT=$WORKSPACE/result
+NEST_VPATH=$WORKSPACE/build
+NEST_RESULT=$WORKSPACE/result
 
- mkdir "$NEST_VPATH" "$NEST_RESULT"
+mkdir "$NEST_VPATH" "$NEST_RESULT"
 
- cd "$NEST_VPATH"
+cd "$NEST_VPATH"
 
- ../configure \
+../configure \
     --prefix="$NEST_RESULT" \
     $CONFIGURE_MPI \
     $CONFIGURE_PYTHON \
     $CONFIGURE_GSL \
 
 
- make
- make install
- make installcheck
+make
+make install
+make installcheck
