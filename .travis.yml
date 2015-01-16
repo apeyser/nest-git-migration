@@ -4,10 +4,10 @@ compiler:
   - clang
 #!/bin/bash
 script:
- set -e
- set -x
+  set -e
+  set -x
 
- mkdir -p $HOME/.matplotlib
+  mkdir -p $HOME/.matplotlib
  cat > $HOME/.matplotlib/matplotlibrc <<EOF
      # ZYV
      backend : svg
