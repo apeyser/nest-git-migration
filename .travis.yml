@@ -8,8 +8,8 @@ before_install:
   - echo $LANG
   - echo $LC_ALL
   - if [ $TRAVIS_OS_NAME == linux ]; then sudo apt-get update && sudo apt-get install -y llvm-3.4 llvm-3.4-dev; fi
-  - sudo apt-get install build-essential autoconf automake libtool libltdl7-dev \
-    libreadline6-dev libncurses5-dev libgsl0-dev python-all-dev python-numpy python-scipy python-matplotlib ipython 
+  - sudo apt-get install build-essential autoconf automake libtool libltdl7-dev 
+  - sudo apt-get install libreadline6-dev libncurses5-dev libgsl0-dev python-all-dev python-numpy python-scipy python-matplotlib ipython 
 #install:
  #  - pip install numpy
 #   - pip install matplotlib
