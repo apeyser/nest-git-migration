@@ -2,4 +2,11 @@ language: cpp
 compiler:
   - gcc
   - clang
-script: run_build.sh
+#script: run_build.sh
+install:
+   - pip install numpy
+   - pip install matplotlib
+   - pip install scipy
+before_install:
+   - sudo apt-get install python3
+    
