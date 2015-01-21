@@ -8,11 +8,12 @@ before_install:
   - echo $LANG
   - echo $LC_ALL
   - if [ $TRAVIS_OS_NAME == linux ]; then sudo apt-get update && sudo apt-get install -y llvm-3.4 llvm-3.4-dev; fi
-  - sudo apt-get install python3
-install:
-   - pip install numpy
-   - pip install matplotlib
-   - pip install scipy
+  - sudo apt-get install build-essential autoconf automake libtool libltdl7-dev \
+    libreadline6-dev libncurses5-dev libgsl0-dev python-all-dev python-numpy python-scipy python-matplotlib ipython 
+#install:
+ #  - pip install numpy
+#   - pip install matplotlib
+#   - pip install scipy
    #- if [[ $TRAVIS_PYTHON_VERSION == "2.7" ]]; then sudo apt-get install python-matplotlib; fi
    #- if [[ $TRAVIS_PYTHON_VERSION == "3.2" ]]; then sudo apt-get install python3-dev python3-numpy; fi
 before_script:
