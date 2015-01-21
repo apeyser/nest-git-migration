@@ -7,6 +7,8 @@ install:
    - pip install numpy
    - pip install matplotlib
    - pip install scipy
+   #- if [[ $TRAVIS_PYTHON_VERSION == "2.7" ]]; then sudo apt-get install python-matplotlib; fi
+   #- if [[ $TRAVIS_PYTHON_VERSION == "3.2" ]]; then sudo apt-get install python3-dev python3-numpy; fi
 before_install:
    - sudo apt-get install python3
     
