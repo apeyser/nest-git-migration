@@ -2,7 +2,8 @@ language: cpp
 compiler:
   - gcc
   - clang
-#script: run_build.sh
+#script:
+ # - ./run_build.sh
 before_install:
   - echo $LANG
   - echo $LC_ALL
