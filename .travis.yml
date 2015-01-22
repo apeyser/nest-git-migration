@@ -16,9 +16,10 @@ before_install:
   - sudo apt-get install -y texlive-latex-extra
   #- sudo apt-get install -y texlive-multirow texlive-pdfcrop
   #Clang
-  - sudo apt-get install clang-analyzer indent
+  #- sudo apt-get install clang-analyzer indent
+  - sudo apt-get install clang indent
   # Required by Topographica
-  - sudo apt-get install xorg-x11-server-Xvfb pylint pyflakes
+  #- sudo apt-get install xorg-x11-server-Xvfb pylint pyflakes
   # Required by NEST, PyNN and Topographica
   - sudo apt-get install python-devel numpy scipy python-virtualenv python-matplotlib python-matplotlib-tk
   # Required by Sumatra and PyNN
