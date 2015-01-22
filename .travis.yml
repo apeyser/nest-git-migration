@@ -41,13 +41,16 @@ before_install:
   - sudo apt-get install libgsl0-dev  libghc-readline-dev 
   #Build dependencies for Sumatra
   #- if [ $TRAVIS_OS_NAME == linux ]; then sudo apt-get install Django django-tagging python-django python-django-tagging python-httplib2 python-simplejson GitPython pysvn; fi
-  - sudo apt-get install python-django python-svn
+  - sudo apt-get install python-django python-django-tagging python-httplib2 python-simplejson python-svn git-svn
   #Build dependencies for PyNN
   - sudo apt-get install python-cheetah python-jinja2 python-mock
   #Build dependencies for Topographica
   #- sudo apt-get install tkinter gmpy python-imaging python-imaging-tk
+  - sudo apt-get install python-tk python-gmpy python-imaging python-imaging-tk
+  
   - sudo apt-get install python 
-  - sudo apt-get install cvs e2fsprogs-devel gettext-devel glib2-devel gpm-devel groff libssh2-devel slang-devel ncurses-devel check check-devel
+  #- sudo apt-get install cvs e2fsprogs-devel gettext-devel glib2-devel gpm-devel groff libssh2-devel slang-devel ncurses-devel check check-devel
+  - sudo apt-get install cvs e2fsprogs gettext libpackagekit-glib2-dev gpm groff libssh2-1-dev python-libssh2 slang-gsl libncurses5-dev check
   
   #- sudo apt-get install build-essential autoconf automake libtool libltdl7-dev 
   #- sudo apt-get install libreadline6-dev libncurses5-dev libgsl0-dev python-all-dev python-numpy python-scipy python-matplotlib ipython 
