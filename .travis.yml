@@ -13,7 +13,7 @@ before_install:
   #- sudo apt-get install -y python3 ipython3 python3-matplotlib python3-matplotlib-tk
   - sudo apt-get install -y python3 ipython3
   # For NEST ConnPlotter tutorial
-  - sudo apt-get install -y texlive-multirow texlive-pdfcrop
+  #- sudo apt-get install -y texlive-multirow texlive-pdfcrop
   #Clang
   - sudo apt-get install clang-analyzer indent
   # Required by Topographica
