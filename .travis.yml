@@ -2,8 +2,9 @@ language: cpp
 compiler:
   - gcc
   - clang
-#script:
- # - ./run_build.sh
+branches:
+ only:
+  - master
 before_install:
   - echo $LANG
   - echo $LC_ALL
@@ -64,8 +65,7 @@ before_install:
 #before_script:
 #  - travis_retry bundle
  # - if [ $TRAVIS_OS_NAME == linux ]; then travis_retry ./configure --llvm-config llvm-config-3.4; fi
-script:
-  - run_build.sh  
+script: build.sh  
 notifications:
   email:
     - r.deepu@fz-juelich.de
