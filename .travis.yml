@@ -50,8 +50,9 @@ before_install:
   
   - sudo apt-get install python 
   #- sudo apt-get install cvs e2fsprogs-devel gettext-devel glib2-devel gpm-devel groff libssh2-devel slang-devel ncurses-devel check check-devel
-  - sudo apt-get install cvs e2fsprogs gettext libpackagekit-glib2-dev gpm groff libssh2-1-dev python-libssh2 slang-gsl libncurses5-dev check
-  
+  #ubuntu
+  #- sudo apt-get install cvs e2fsprogs gettext libpackagekit-glib2-dev gpm groff libssh2-1-dev python-libssh2 slang-gsl libncurses5-dev check
+  - sudo apt-get install cvs e2fsprogs gettext libpackagekit-glib2-dev groff libssh2-1-dev python-libssh2 slang-gsl libncurses5-dev check
   #- sudo apt-get install build-essential autoconf automake libtool libltdl7-dev 
   #- sudo apt-get install libreadline6-dev libncurses5-dev libgsl0-dev python-all-dev python-numpy python-scipy python-matplotlib ipython 
 #install:
