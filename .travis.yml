@@ -26,7 +26,7 @@ before_install:
   # Required by Sumatra and PyNN
   #- sudo apt-get install python-coverage python-nose python-setuptools
   #- sudo apt-get install mpi4py-openmpi
-  - sudo apt-get install python-coverage python-nose python-setuptools python-setuptools-git
+  - sudo apt-get install python-coverage python-nose python-setuptools
   - sudo apt-get install python-mpi4py openmpi-dev openmpi-bin
   #python 3
   #- sudo apt-get install python3 python3-devel python3-numpy python3-scipy python3-nose python3-coverage python3-Cython
