@@ -10,7 +10,7 @@ before_install:
 install:  
   - if [ $TRAVIS_OS_NAME == linux ]; then sudo apt-get update && sudo apt-get install -y llvm-3.4 llvm-3.4-dev; fi
   #- if [ $TRAVIS_OS_NAME == linux ]; then sudo apt-get install python3 ipython3 python3-matplotlib python3-matplotlib-tk; fi
-  - sudo apt-get install python3 ipython3 python3-matplotlib python3-matplotlib-tk
+  #- sudo apt-get install python3 ipython3 python3-matplotlib python3-matplotlib-tk
   # For NEST ConnPlotter tutorial
   - sudo apt-get install texlive-multirow texlive-pdfcrop
   #Clang
