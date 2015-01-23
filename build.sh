@@ -47,8 +47,8 @@ fi
 
 ./bootstrap.sh
 
-NEST_VPATH=$WORKSPACE/build
-NEST_RESULT=$WORKSPACE/result
+NEST_VPATH=build
+NEST_RESULT=result
 
 mkdir "$NEST_VPATH" "$NEST_RESULT"
 
