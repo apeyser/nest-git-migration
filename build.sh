@@ -52,6 +52,8 @@ NEST_RESULT=result
 
 mkdir "$NEST_VPATH" "$NEST_RESULT"
 
+NEST_RESULT=$(realpath $NEST_RESULT)
+
 cd "$NEST_VPATH"
 
 ../configure \
