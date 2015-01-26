@@ -267,7 +267,7 @@ run_test ()
 
     chmod 755 "${TEST_RUNFILE}"
 
-    time_dirty="$( /bin/bash -c "time ${TIME_PARAM} '${TEST_RUNFILE}' " 2>&1 )"
+    time_dirty="$( /bin/sh -c "time ${TIME_PARAM} '${TEST_RUNFILE}' " 2>&1 )"
     rm -f "${TEST_RUNFILE}"
 
     TIME_ELAPSED="$( echo "${time_dirty}" | awk 'NR == 1 { print $2 ; }' )"
