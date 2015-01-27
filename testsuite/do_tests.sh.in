@@ -102,6 +102,17 @@ portable_inplace_sed ()
 }
 
 #
+# measure runtime of command
+#
+time_cmd()
+{
+    start=`date +%s%N`
+    $1
+    end=`date +%s%N`
+    echo `awk "BEGIN {print ($end - $start) / 1000000000}"`
+}
+
+#
 # sed has different syntax for extended regular expressions
 # on different operating systems:
 # BSD: -E
@@ -267,11 +278,9 @@ run_test ()
 
     chmod 755 "${TEST_RUNFILE}"
 
-    time_dirty="$( /bin/sh -c "time ${TIME_PARAM} '${TEST_RUNFILE}' " 2>&1 )"
-    rm -f "${TEST_RUNFILE}"
-
-    TIME_ELAPSED="$( echo "${time_dirty}" | awk 'NR == 1 { print $2 ; }' )"
+    TIME_ELAPSED="$( time_cmd "${TEST_RUNFILE}" 2>&1 )"
     TIME_TOTAL="$( awk "BEGIN { print (${TIME_TOTAL} + ${TIME_ELAPSED}) ; }" )"
+    rm -f "${TEST_RUNFILE}"
 
     exit_code="$(cat "${TEST_RETFILE}")"
 
@@ -326,21 +335,6 @@ INFO_HOST="$(hostname -f)"
 INFO_OS="$(uname -s)"
 INFO_USER="$(whoami)"
 INFO_VER="$(uname -r)"
-
-# We hope that time, be it a shell built-in, or an independent program
-# accepts -p flag as mandated by POSIX; however, the shell built-in might
-# not actually accept -p (as in bash called as sh) AND, at the same time,
-# a POSIX-compatible utility might not be installed on the target machine.
-#
-# In this case, we just skip the -p in the hope, that the output will
-# conform to POSIX. Additionally, we set the TIMEFORMAT to POSIX in order
-# to work around bash peculiarity mentioned above.
-
-TIME_PARAM="-p"
-/bin/sh -c "time ${TIME_PARAM} uname"  >/dev/null 2>&1 || TIME_PARAM=""
-
-TIMEFORMAT=$'real %2R\nuser %2U\nsys %2S'
-export TIMEFORMAT
 
 TEST_BASEDIR="@TESTSUITE_BASEDIR@"
 TEST_OUTDIR=${TEST_OUTDIR:-"$( pwd )/reports"}
