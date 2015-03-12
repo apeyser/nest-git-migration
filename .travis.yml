@@ -2,6 +2,10 @@ language: cpp
 compiler:
   - gcc
  # - clang
+ env:
+  - xGSL=GSL+ xGSL=GSL-
+  - xMPI=MPI+ xMPI=MPI-
+  - xPYTHON=PYTHON+ xPYTHON=PYTHON-
 branches:
  only:
   - master
