@@ -16,6 +16,7 @@ matrix:
    - xGSL=GSL+ xGSL=GSL-
    - xMPI=MPI+ xMPI=MPI-
    - xPYTHON=PYTHON+ xPYTHON=PYTHON-
+  fast_finish: true 
 branches:
  only:
   - master
