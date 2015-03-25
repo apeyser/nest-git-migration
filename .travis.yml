@@ -2,6 +2,15 @@ language: cpp
 compiler:
   - gcc
  # - clang
+xGSL:
+  - GSL+
+  - GSL-
+xMPI:
+  - MPI+
+  - MPI-
+xPython:
+  - PYTHON+
+  - PYTHON-
 matrix:
  include:
    - xGSL=GSL+ xGSL=GSL-
