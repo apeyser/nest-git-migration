@@ -54,7 +54,7 @@ before_install:
   #- sudo apt-get install autoconf automake libtool libtool-ltdl-devel
   #- sudo apt-get install gsl-devel openmpi-devel readline-devel Cython
   - sudo apt-get install -y autoconf automake libtool libltdl-dev
-  - sudo apt-get install -y libgsl0-dev  libghc-readline-dev 
+  - sudo apt-get install -y libgsl0-dev  libghc-readline-dev gsl-bin libgsl0-dbg libgsl0ldbl
   #Build dependencies for Sumatra
   #- if [ $TRAVIS_OS_NAME == linux ]; then sudo apt-get install Django django-tagging python-django python-django-tagging python-httplib2 python-simplejson GitPython pysvn; fi
   - sudo apt-get install -y python-django python-django-tagging python-httplib2 python-simplejson python-svn git-svn
