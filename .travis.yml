@@ -3,15 +3,23 @@ compiler:
   - gcc
  # - clang
 env: 
- - xGSL = GSL+
- - xGSL = GSL-  
- - xMPI = MPI+
- - xMPI = MPI-
- - xPython = PYTHON+
- - xPython = PYTHON-
+ - xGSL=GSL+
+ - xGSL=GSL-  
+ - xMPI=MPI+
+ - xMPI=MPI-
+ - xPython=PYTHON+
+ - xPython=PYTHON-
 matrix:
  include:
-    fast_finish: true 
+   - env: xGSL=GSL+ xMPI=MPI- xPYTHON=PYTHON+
+   - env: xGSL=GSL- xMPI=MPI+ xPYTHON=PYTHON+
+   - env: xGSL=GSL+ xMPI=MPI+ xPYTHON=PYTHON+
+   - env: xGSL=GSL- xMPI=MPI+ xPYTHON=PYTHON-
+   - env: xGSL=GSL+ xMPI=MPI+ xPYTHON=PYTHON-
+   - env: xGSL=GSL+ xMPI=MPI- xPYTHON=PYTHON-
+   - env: xGSL=GSL- xMPI=MPI- xPYTHON=PYTHON+
+   - env: xGSL=GSL- xMPI=MPI- xPYTHON=PYTHON-
+   fast_finish: true 
 branches:
  only:
   - master
