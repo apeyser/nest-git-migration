@@ -3,12 +3,12 @@ compiler:
   - gcc
  # - clang
 env: 
- - GSL = GSL+
- - GSL = GSL-  
- - MPI = MPI+
- - MPI = MPI-
- - Python = PYTHON+
- - Python = PYTHON-
+ - xGSL = GSL+
+ - xGSL = GSL-  
+ - xMPI = MPI+
+ - xMPI = MPI-
+ - xPython = PYTHON+
+ - xPython = PYTHON-
 matrix:
  include:
     fast_finish: true 
