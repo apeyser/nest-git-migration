@@ -95,7 +95,6 @@ before_script:
 script: ./build.sh  
 notifications:
   email: false
-   
     - r.deepu@fz-juelich.de
     - t.zito@fz-juelich.de
     - a.peyser@fz-juelich.de
