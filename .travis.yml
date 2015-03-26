@@ -84,7 +84,8 @@ before_script:
  - chmod +x build.sh 
 script: ./build.sh  
 notifications:
-  email:
+  email: false
+   recipients:
     - r.deepu@fz-juelich.de
     - t.zito@fz-juelich.de
     - a.peyser@fz-juelich.de
