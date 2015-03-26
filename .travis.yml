@@ -15,8 +15,8 @@ matrix:
 branches:
  only:
   - master
-#virtualenv:
-  #system_site_packages: true
+virtualenv:
+  system_site_packages: true
 before_install:
   - echo $LANG
   - echo $LC_ALL
