@@ -27,6 +27,8 @@ before_install:
   - sudo apt-get install -y python3 ipython3 coreutils gawk mawk original-awk
   # some basic package build tools:
   - sudo apt-get install -y devscripts build-essential
+  # remove any obsolete libraries
+  - sudo apt-get autoremove
  
   # For NEST ConnPlotter tutorial
   - sudo apt-get install -y texlive-latex-extra
