@@ -2,21 +2,16 @@ language: cpp
 compiler:
   - gcc
  # - clang
-xGSL:
-  - GSL+
-  - GSL-
-xMPI:
-  - MPI+
-  - MPI-
-xPython:
-  - PYTHON+
-  - PYTHON-
+env: 
+ - GSL = GSL+
+ - GSL = GSL-  
+ - MPI = MPI+
+ - MPI = MPI-
+ - Python = PYTHON+
+ - Python = PYTHON-
 matrix:
  include:
-   - xGSL=GSL+ xGSL=GSL-
-   - xMPI=MPI+ xMPI=MPI-
-   - xPYTHON=PYTHON+ xPYTHON=PYTHON-
-  fast_finish: true 
+    fast_finish: true 
 branches:
  only:
   - master
