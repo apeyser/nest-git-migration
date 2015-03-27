@@ -13,6 +13,8 @@ if [ "$xMPI" = "MPI+" ] ; then
 
     # Fedora
    # module load mpi/openmpi-i386
+   export PATH="$PATH:/home/$USER/.openmpi/bin"
+   export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/$USER/.openmpi/lib/"
 
 cat > $HOME/.nestrc <<EOF
     % ZYV: NEST MPI configuration
