@@ -18,9 +18,13 @@ if [ "$xMPI" = "MPI+" ] ; then
    #export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/$USER/.openmpi/lib/"
    ls  /home/travis/build/INM-6/nest-git-migration/
    ls  /home/travis/
+   ls /usr/include
+   ls /usr/lib
    #/home/travis/build/INM-6/nest-git-migration/
-   export PATH="$PATH:/home/travis/.openmpi/bin"
-   export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/travis/.openmpi/lib/"
+   export PATH="$PATH:/usr/include/.openmpi/bin"
+   export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib/.openmpi/lib/"
+   export PATH="$PATH:/usr/include/openmpi/bin"
+   export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib/openmpi/lib/"
    
 cat > $HOME/.nestrc <<EOF
     % ZYV: NEST MPI configuration
