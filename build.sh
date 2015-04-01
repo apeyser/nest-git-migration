@@ -17,22 +17,23 @@ if [ "$xMPI" = "MPI+" ] ; then
    #export PATH="$PATH:/home/$USER/.openmpi/bin"
    #export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/$USER/.openmpi/lib/"
    ls  /home/travis/build/INM-6/nest-git-migration/
+   ls  /home/travis/
    export PATH="$PATH:/home/travis/build/INM-6/nest-git-migration/.openmpi/bin"
    export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/travis/build/INM-6/nest-git-migration/.openmpi/lib/"
    
 
-cat > $HOME/.nestrc <<EOF
-    % ZYV: NEST MPI configuration
+   cat > $HOME/.nestrc <<EOF
+       % ZYV: NEST MPI configuration
 
-    /mpirun
-    [/integertype /stringtype]
-    [/numproc     /slifile]
-    {
-     () [
-      (mpirun -np ) numproc cvs ( ) statusdict/prefix :: (/bin/nest )  slifile
-     ] {join} Fold
-    } Function def
-EOF
+       /mpirun
+       [/integertype /stringtype]
+       [/numproc     /slifile]
+       {
+       () [
+       (mpirun -np ) numproc cvs ( ) statusdict/prefix :: (/bin/nest )  slifile
+       ] {join} Fold
+       } Function def
+   EOF
 
     CONFIGURE_MPI="--with-mpi"
 
