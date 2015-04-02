@@ -16,11 +16,8 @@ if [ "$xMPI" = "MPI+" ] ; then
    
    #export PATH="$PATH:/home/$USER/.openmpi/bin"
    #export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/$USER/.openmpi/lib/"
-   #ls  /home/travis/build/INM-6/nest-git-migration/
-   #ls  /home/travis/
-   ls /usr/include
-   ls /usr/lib
    ls /usr/include/openmpi
+   ls /usr/include/openmpi/openmpi
    ls /usr/include/mpi
    ls /usr/lib/openmpi
    
