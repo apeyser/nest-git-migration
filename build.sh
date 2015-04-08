@@ -60,7 +60,7 @@ NEST_RESULT=$(readlink -f $NEST_RESULT)
 cd "$NEST_VPATH"
 
 ../configure \
-    --prefix="$NEST_RESULT" \
+    --prefix="$NEST_RESULT"  CC=mpicc CXX=mpic++ \
     $CONFIGURE_MPI \
     $CONFIGURE_PYTHON \
     $CONFIGURE_GSL \
