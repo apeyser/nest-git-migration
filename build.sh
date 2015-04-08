@@ -16,6 +16,7 @@ if [ "$xMPI" = "MPI+" ] ; then
    #openmpi
    export LD_LIBRARY_PATH="/usr/lib/openmpi/lib:$LD_LIBRARY_PATH"
    export CPATH="/usr/lib/openmpi/include:$CPATH"
+   export PATH="/usr/include/mpi:$PATH"
    
 cat > $HOME/.nestrc <<EOF
     % ZYV: NEST MPI configuration
