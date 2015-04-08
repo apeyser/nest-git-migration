@@ -2,13 +2,13 @@ language: cpp
 compiler:
   - gcc
  # - clang
-env: 
- - xGSL=GSL+
- - xGSL=GSL-  
- - xMPI=MPI+
- - xMPI=MPI-
- - xPython=PYTHON+
- - xPython=PYTHON-
+#env: 
+ #- xGSL=GSL+
+ #- xGSL=GSL-  
+ #- xMPI=MPI+
+ # - xMPI=MPI-
+ # - xPython=PYTHON+
+ # - xPython=PYTHON-
 matrix:
  include:
     - env: xGSL=GSL+ xMPI=MPI- xPYTHON=PYTHON+
@@ -76,7 +76,7 @@ before_install:
   #- sudo apt-get install tkinter gmpy python-imaging python-imaging-tk
   - sudo apt-get install -y python-tk python-gmpy python-imaging python-imaging-tk
   
-  - sudo apt-get install -y python 
+  #- sudo apt-get install -y python 
   #- sudo apt-get install cvs e2fsprogs-devel gettext-devel glib2-devel gpm-devel groff libssh2-devel slang-devel ncurses-devel check check-devel
   #ubuntu
   #- sudo apt-get install cvs e2fsprogs gettext libpackagekit-glib2-dev gpm groff libssh2-1-dev python-libssh2 slang-gsl libncurses5-dev check
