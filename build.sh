@@ -13,25 +13,6 @@ if [ "$xMPI" = "MPI+" ] ; then
 
     # Fedora
    # module load mpi/openmpi-i386
-   
-   #export PATH="$PATH:/home/$USER/.openmpi/bin"
-   #export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/$USER/.openmpi/lib/"
-   ls /usr/include/openmpi
-   ls /usr/include/openmpi/openmpi
-   ls /usr/include/mpi
-   ls /usr/lib/openmpi
-   
-   ls /usr/local/mpi/openmpi
-   
-   #/home/travis/build/INM-6/nest-git-migration/
-   #export PATH="$PATH:/usr/include/.openmpi/bin"
-   #export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib/.openmpi/lib/"
-   export PATH="$PATH:/usr/include/openmpi/bin"
-   export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib/openmpi/lib/"
-   
-   #mpich2
-   export LD_LIBRARY_PATH="/usr/lib/mpich2/lib:$LD_LIBRARY_PATH"
-   export CPATH="/usr/include/mpich2:$CPATH"
    #openmpi
    export LD_LIBRARY_PATH="/usr/lib/openmpi/lib:$LD_LIBRARY_PATH"
    export CPATH="/usr/lib/openmpi/include:$CPATH"
