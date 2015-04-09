@@ -95,6 +95,8 @@ before_install:
 before_script:
  - chmod +x build.sh 
 script: ./build.sh  
+#after_script:
+ #- TRAVIS_TEST_RESULT
 notifications:
   email: false
     - r.deepu@fz-juelich.de
