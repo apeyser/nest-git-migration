@@ -69,3 +69,5 @@ cd "$NEST_VPATH"
 make
 make install
 make installcheck
+ls /home/travis/build/INM-6/nest-git-migration/build/reports
+cat /home/travis/build/INM-6/nest-git-migration/build/reports/TEST-core.phase_5.xml
