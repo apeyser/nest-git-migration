@@ -94,7 +94,9 @@ before_install:
  # - if [ $TRAVIS_OS_NAME == linux ]; then travis_retry ./configure --llvm-config llvm-config-3.4; fi
 before_script:
  - chmod +x build.sh 
+ - chmod +x test_result.sh
 script: ./build.sh  
+        ./test_result.sh
 after_script:
  - TRAVIS_TEST_RESULT
 notifications:
