@@ -99,6 +99,9 @@ before_install:
 #cpplint
   - sudo curl -L "http://google-styleguide.googlecode.com/svn/trunk/cpplint/cpplint.py" -o /usr/bin/cpplint.py
   - sudo chmod a+x /usr/bin/cpplint.py
+#cppcheck
+  - sudo apt-get cppcheck
+  
  
 before_script:
  - chmod +x build.sh 
