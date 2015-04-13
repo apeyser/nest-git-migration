@@ -9,9 +9,9 @@ compiler:
  # - xMPI=MPI-
  # - xPython=PYTHON+
  # - xPython=PYTHON-
-env:
-  - ANALYZE=false
-  - ANALYZE=true
+#env:
+#  - ANALYZE=false
+#  - ANALYZE=true
 matrix:
  include:
     - env: xGSL=GSL+ xMPI=MPI- xPYTHON=PYTHON+
@@ -104,6 +104,7 @@ before_install:
  # for checking coding style
   - sudo apt-get install clang-format-3.4
   - sudo ln -s /usr/bin/clang-format-3.4 /usr/bin/clang-format
+  - clang-format -style=llvm -dump-config > .clang-format
 #cpplint
   - sudo curl -L "http://google-styleguide.googlecode.com/svn/trunk/cpplint/cpplint.py" -o /usr/bin/cpplint.py
   - sudo chmod a+x /usr/bin/cpplint.py
@@ -117,8 +118,8 @@ before_script:
  - chmod +x test_result.sh
 script: ./build.sh  
        # ./test_result.sh
-after_script:
- - TRAVIS_TEST_RESULT
+#after_script:
+# - TRAVIS_TEST_RESULT
 notifications:
   email: false
     - r.deepu@fz-juelich.de
