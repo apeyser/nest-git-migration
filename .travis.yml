@@ -9,6 +9,9 @@ compiler:
  # - xMPI=MPI-
  # - xPython=PYTHON+
  # - xPython=PYTHON-
+env:
+  - ANALYZE=false
+  - ANALYZE=true
 matrix:
  include:
     - env: xGSL=GSL+ xMPI=MPI- xPYTHON=PYTHON+
