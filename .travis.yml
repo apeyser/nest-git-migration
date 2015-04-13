@@ -102,7 +102,8 @@ before_install:
 #cppcheck
   - sudo apt-get install cppcheck
   
- 
+install: 
+ - cppcheck --version
 before_script:
  - chmod +x build.sh 
  - chmod +x test_result.sh
