@@ -45,13 +45,14 @@ deploy:
   api_key:
     secure: bpwv/Rn6mtXR67OdApRvh9dCKCMW1X5tKKZbbxZneaO2uVjG/pWn445BZn9NzC1KhKCcbbLpYc0ECH/FC7bwVSKBD1wDvwncyheWbEqnLLtbRSNOZBTsNypJTeZwHekxzCmimWvZEVD2d0PSjsy7GhYrnmBoaioSg8qtsauK8nk=
   file:
-    - "reports/installcheck.log"
-    - "reports/pynest_tests.xml"
-    - "reports/TEST-core.phase_1.xml"
-    - "reports/TEST-core.phase_2.xml"
-    - "reports/TEST-core.phase_3.xml"
-    - "reports/TEST-core.phase_4.xml"
-    - "reports/TEST-core.phase_5.xml"
+    - reports/installcheck.log
+    - reports/pynest_tests.xml
+    - reports/TEST-core.phase_1.xml
+    - reports/TEST-core.phase_2.xml
+    - reports/TEST-core.phase_3.xml
+    - reports/TEST-core.phase_4.xml
+    - reports/TEST-core.phase_5.xml
+  skip_cleanup: true
   on:
     repo: apeyser/nest-git-migration
-    branch: travis
+    tags: true
