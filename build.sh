@@ -9,7 +9,7 @@ cat > $HOME/.matplotlib/matplotlibrc <<EOF
     backend : svg
 EOF
 
-if [ "$xMPI" = "MPI+" ] ; then
+if [ "$xMPI" = "x" ] ; then
    export LD_LIBRARY_PATH="/usr/lib/openmpi/lib:$LD_LIBRARY_PATH"
    export CPATH="/usr/lib/openmpi/include:$CPATH"
    export PATH="/usr/include/mpi:$PATH"
@@ -32,13 +32,13 @@ else
     CONFIGURE_MPI="--without-mpi"
 fi
 
-if [ "$xPYTHON" = "Python+" ] ; then
+if [ "$xPYTHON" = "x" ] ; then
     CONFIGURE_PYTHON="--with-python"
 else
     CONFIGURE_PYTHON="--without-python"
 fi
 
-if [ "$xGSL" = "GSL+" ] ; then
+if [ "$xGSL" = "x" ] ; then
     CONFIGURE_GSL="--with-gsl"
 else
     CONFIGURE_GSL="--without-gsl"
