@@ -1,11 +1,9 @@
 language: cpp
-compiler:
-- gcc
-branches:
-  only:
-  - master
-virtualenv:
-  system_site_packages: true
+compiler: gcc
+cache: 
+- ccache
+- apt
+
 before_install:
 - echo $LANG
 - echo $LC_ALL
@@ -31,14 +29,16 @@ before_install:
 - sudo apt-get install -y python
 - sudo apt-get install -y cvs e2fsprogs gettext libpackagekit-glib2-dev groff libssh2-1-dev
   python-libssh2 slang-gsl libncurses5-dev check
-before_script:
-- chmod +x build.sh
+
+before_script: chmod +x build.sh
 script: ./build.sh
+
 notifications:
   email:
-  - a.peyser@fz-juelich.de
-  on_success: change
-  on_failure: always
+    recipients:
+      - a.peyser@fz-juelich.de
+    on_success: change
+    on_failure: always
 
 deploy:
   provider: releases
