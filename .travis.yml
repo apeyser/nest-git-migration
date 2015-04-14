@@ -54,7 +54,7 @@ notifications:
     on_success: change
     on_failure: always
 
-before_deploy: tar cvf reports.tar $TRAVIS_BUILD_DIR/reports
+before_deploy: tar cvf reports.tar -C $TRAVIS_BUILD_DIR/build reports
 
 deploy:
   provider: releases
