@@ -1,9 +1,24 @@
 language: cpp
-compiler: gcc
-cache: 
-- ccache
-- apt
+compiler:
+  - gcc
+  - clang
+cache:
+  - ccache
+  - apt
 
+matrix:
+ include:
+    - env: xGSL=GSL+ xMPI=MPI- xPYTHON=PYTHON+
+    - env: xGSL=GSL- xMPI=MPI+ xPYTHON=PYTHON+
+    - env: xGSL=GSL+ xMPI=MPI+ xPYTHON=PYTHON+
+    - env: xGSL=GSL- xMPI=MPI+ xPYTHON=PYTHON-
+    - env: xGSL=GSL+ xMPI=MPI+ xPYTHON=PYTHON-
+    - env: xGSL=GSL+ xMPI=MPI- xPYTHON=PYTHON-
+    - env: xGSL=GSL- xMPI=MPI- xPYTHON=PYTHON+
+    - env: xGSL=GSL- xMPI=MPI- xPYTHON=PYTHON-
+ fast_finish: true
+
+apt: true  
 before_install:
 - echo $LANG
 - echo $LC_ALL

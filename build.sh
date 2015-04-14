@@ -12,11 +12,14 @@ EOF
 if [ "$xMPI" = "MPI+" ] ; then
 
     # Fedora
-    module load mpi/openmpi-i386
-
+   # module load mpi/openmpi-i386
+   #openmpi
+   export LD_LIBRARY_PATH="/usr/lib/openmpi/lib:$LD_LIBRARY_PATH"
+   export CPATH="/usr/lib/openmpi/include:$CPATH"
+   export PATH="/usr/include/mpi:$PATH"
+   
 cat > $HOME/.nestrc <<EOF
     % ZYV: NEST MPI configuration
-
     /mpirun
     [/integertype /stringtype]
     [/numproc     /slifile]
@@ -26,7 +29,7 @@ cat > $HOME/.nestrc <<EOF
      ] {join} Fold
     } Function def
 EOF
-
+ 
     CONFIGURE_MPI="--with-mpi"
 
 else
@@ -57,7 +60,7 @@ NEST_RESULT=$(readlink -f $NEST_RESULT)
 cd "$NEST_VPATH"
 
 ../configure \
-    --prefix="$NEST_RESULT" \
+    --prefix="$NEST_RESULT"  CC=mpicc CXX=mpic++ \
     $CONFIGURE_MPI \
     $CONFIGURE_PYTHON \
     $CONFIGURE_GSL \
@@ -66,3 +69,8 @@ cd "$NEST_VPATH"
 make
 make install
 make installcheck
+ls /home/travis/build/INM-6/nest-git-migration/build/reports
+cat /home/travis/build/INM-6/nest-git-migration/build/reports/TEST-core.phase_2.xml
+if [ "$xMPI" = "MPI+" ] ; then
+  cat /home/travis/build/INM-6/nest-git-migration/build/reports/TEST-core.phase_5.xml
+fi  
