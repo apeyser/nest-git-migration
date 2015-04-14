@@ -46,17 +46,13 @@ fi
 
 ./bootstrap.sh
 
-NEST_VPATH=build
-NEST_RESULT=result
-
-mkdir "$NEST_VPATH" "$NEST_RESULT"
-
-NEST_RESULT=$(readlink -f $NEST_RESULT)
-
-cd "$NEST_VPATH"
+mkdir build result
+NEST_RESULT=$(readlink -f result)
+cd build
 
 ../configure \
-    --prefix="$NEST_RESULT"  CC=mpicc CXX=mpic++ \
+    --prefix="$NEST_RESULT"  \
+    CC=mpicc CXX=mpic++ \
     $CONFIGURE_MPI \
     $CONFIGURE_PYTHON \
     $CONFIGURE_GSL \
