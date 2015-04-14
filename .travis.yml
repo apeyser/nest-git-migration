@@ -54,13 +54,13 @@ notifications:
     on_success: change
     on_failure: always
 
-before_deploy: tar cvf reports.tar -C $TRAVIS_BUILD_DIR/build reports
+before_deploy: tar cvf reports-$xGSL-$xMPI-$xPYTHON.tar -C $TRAVIS_BUILD_DIR/build reports
 
 deploy:
   provider: releases
   api_key:
     secure: bpwv/Rn6mtXR67OdApRvh9dCKCMW1X5tKKZbbxZneaO2uVjG/pWn445BZn9NzC1KhKCcbbLpYc0ECH/FC7bwVSKBD1wDvwncyheWbEqnLLtbRSNOZBTsNypJTeZwHekxzCmimWvZEVD2d0PSjsy7GhYrnmBoaioSg8qtsauK8nk=
-  file: reports.tar
+  file: reports-$xGSL-$xMPI-$xPYTHON.tar
   skip_cleanup: true
   on:
     repo: apeyser/nest-git-migration
