@@ -2,21 +2,22 @@ language: cpp
 compiler: gcc
 
 cache:
-  - ccache
-  - apt
+- ccache
+- apt
 
 env:
-    - xGSL=o xMPI=o xPYTHON=o
-    - xGSL=o xMPI=o xPYTHON=x
-    - xGSL=o xMPI=x xPYTHON=o
-    - xGSL=o xMPI=x xPYTHON=x
-    - xGSL=x xMPI=o xPYTHON=o
-    - xGSL=x xMPI=o xPYTHON=x
-    - xGSL=x xMPI=x xPYTHON=o
-    - xGSL=x xMPI=x xPYTHON=x
+  matrix:
+  - xGSL=o xMPI=o xPYTHON=o
+  - xGSL=o xMPI=o xPYTHON=x
+  - xGSL=o xMPI=x xPYTHON=o
+  - xGSL=o xMPI=x xPYTHON=x
+  - xGSL=x xMPI=o xPYTHON=o
+  - xGSL=x xMPI=o xPYTHON=x
+  - xGSL=x xMPI=x xPYTHON=o
+  - xGSL=x xMPI=x xPYTHON=x
 
 matrix:
- fast_finish: true
+  fast_finish: true
 
 before_install: |
   echo $LANG
@@ -47,10 +48,20 @@ before_install: |
 
 script: ./build.sh
 
+after_failure: |
+  (
+    cd $TRAVIS_BUILD_DIR/build
+    for i in $(find reports -type f); do
+      echo "###########################"
+      echo "File: $i"
+      cat $i
+    done
+  )
+
 notifications:
   email:
     recipients:
-      - a.peyser@fz-juelich.de
+    - a.peyser@fz-juelich.de
     on_success: change
     on_failure: always
 

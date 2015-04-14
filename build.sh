@@ -59,13 +59,4 @@ cd build
 
 make
 make install
-if ! make installcheck; then
-    ls reports
-    for i in reports/*.xml reports/*.log; do 
-	[ -e $i ] || continue
-	echo "###########################"
-	echo "File: $i"
-	cat $i
-    done
-    false
-fi
+make installcheck
