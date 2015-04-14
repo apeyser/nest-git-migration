@@ -52,15 +52,14 @@ before_install:
 
 script: ./build.sh
 
-after_failure: |
-  (
-    cd $TRAVIS_BUILD_DIR/build
+after_failure:
+  - cd $TRAVIS_BUILD_DIR/build
+  - |
     for i in $(find reports -type f); do
       echo "###########################"
       echo "File: $i"
       cat $i
     done
-  )
 
 notifications:
   email:
