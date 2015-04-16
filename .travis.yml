@@ -7,14 +7,7 @@ cache:
 
 env:
   matrix:
-  - xGSL=o xMPI=o xPYTHON=o
   - xGSL=o xMPI=o xPYTHON=x
-  - xGSL=o xMPI=x xPYTHON=o
-  - xGSL=o xMPI=x xPYTHON=x
-  - xGSL=x xMPI=o xPYTHON=o
-  - xGSL=x xMPI=o xPYTHON=x
-  - xGSL=x xMPI=x xPYTHON=o
-  - xGSL=x xMPI=x xPYTHON=x
 
 matrix:
   fast_finish: true
