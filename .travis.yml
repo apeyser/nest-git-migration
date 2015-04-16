@@ -12,17 +12,6 @@ compiler:
 #env:
 #  - ANALYZE=false
 #  - ANALYZE=true
-matrix:
- include:
-    - env: xGSL=GSL+ xMPI=MPI- xPYTHON=PYTHON+
-    - env: xGSL=GSL- xMPI=MPI+ xPYTHON=PYTHON+
-    - env: xGSL=GSL+ xMPI=MPI+ xPYTHON=PYTHON+
-    - env: xGSL=GSL- xMPI=MPI+ xPYTHON=PYTHON-
-    - env: xGSL=GSL+ xMPI=MPI+ xPYTHON=PYTHON-
-    - env: xGSL=GSL+ xMPI=MPI- xPYTHON=PYTHON-
-    - env: xGSL=GSL- xMPI=MPI- xPYTHON=PYTHON+
-    - env: xGSL=GSL- xMPI=MPI- xPYTHON=PYTHON-
- fast_finish: true 
 cache:
 apt: true  
 virtualenv:
